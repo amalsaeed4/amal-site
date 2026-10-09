@@ -27,6 +27,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   background: var(--color-cream);
   color: var(--color-ink);
 }
@@ -97,4 +98,69 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .float, .wave, .caret { animation: none; }
   html { scroll-behavior: auto; }
+}
+
+/* ---------- cute extras ---------- */
+
+/* cursor sparkles */
+.sparkle {
+  position: fixed;
+  z-index: 60;
+  pointer-events: none;
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  animation: sparkle-fade 800ms ease-out forwards;
+}
+@keyframes sparkle-fade {
+  to {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + 22px)) scale(0.3) rotate(90deg);
+  }
+}
+
+/* confetti from popped stickers */
+.confetti {
+  position: fixed;
+  z-index: 60;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  pointer-events: none;
+  animation: confetti-burst 900ms cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+@keyframes confetti-burst {
+  to {
+    opacity: 0;
+    transform: translate(var(--x), calc(var(--y) + 40px)) rotate(var(--rot));
+  }
+}
+
+/* tech stack marquee */
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* winking mascot */
+.mascot .wink { display: none; }
+.mascot:hover .wink { display: inline; }
+.mascot:hover .smile { display: none; }
+
+/* konami party mode */
+@keyframes party {
+  to { filter: hue-rotate(360deg); }
+}
+.party main,
+.party header,
+.party footer {
+  animation: party 3s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track, .party main, .party header, .party footer { animation: none; }
 }

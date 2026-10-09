@@ -1,5 +1,7 @@
 import { Terminal } from "@/components/Terminal";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Effects } from "@/components/Effects";
+import { CopyEmail, PopSticker } from "@/components/Fun";
 
 const EMAIL = "amalsaeedwork@gmail.com";
 const LINKEDIN = "https://www.linkedin.com/in/amal-saeed-swe";
@@ -97,9 +99,51 @@ function Chip({ children }: { children: React.ReactNode }) {
   );
 }
 
+const stack = [
+  "TypeScript", "Python", "React", "Next.js", "Tailwind", "FastAPI", "Node.js",
+  "PostgreSQL", "Redis", "Qdrant", "Gemini", "OpenAI", "Docker", "AWS",
+];
+
+const now = [
+  ["🛠️", "building", "AI study features at felixx"],
+  ["🧠", "learning", "system design + grinding NeetCode"],
+  ["🚀", "next up", "shipping a side project people actually use"],
+];
+
+function Squiggle() {
+  return (
+    <div className="flex justify-center py-2" aria-hidden>
+      <svg width="140" height="16" viewBox="0 0 140 16" fill="none" className="text-lilac-deep/50">
+        <path
+          d="M2 8c8.5-8 8.5 8 17 0s8.5 8 17 0 8.5 8 17 0 8.5 8 17 0 8.5 8 17 0 8.5 8 17 0 8.5 8 17 0"
+          stroke="currentColor"
+          strokeWidth="3"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function Marquee() {
+  const items = [...stack, ...stack];
+  return (
+    <div className="marquee relative left-1/2 w-screen -translate-x-1/2 -rotate-1 overflow-hidden border-y-2 border-ink bg-butter py-3 dark:border-night-line dark:bg-night-card">
+      <div className="marquee-track flex w-max gap-6 font-mono text-sm font-semibold text-ink dark:text-[#ece8ff]">
+        {items.map((t, i) => (
+          <span key={i} className="flex items-center gap-6">
+            {t} <span className="text-pink">✦</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <div className="dots min-h-screen">
+      <Effects />
       {/* nav */}
       <header className="sticky top-0 z-20 border-b-2 border-ink/10 bg-cream/80 backdrop-blur dark:border-night-line dark:bg-night/80">
         <nav className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
@@ -119,8 +163,9 @@ export default function Home() {
       <main className="mx-auto max-w-5xl px-4 sm:px-6">
         {/* hero */}
         <section className="relative grid items-center gap-12 py-16 sm:py-24 md:grid-cols-[1.1fr_1fr]">
-          <span className="float pointer-events-none absolute -top-2 right-4 text-3xl text-pink [--r:12deg]" aria-hidden>✦</span>
-          <span className="float pointer-events-none absolute bottom-6 left-1/2 text-2xl text-mint [--r:-10deg] [animation-delay:1.2s]" aria-hidden>★</span>
+          <PopSticker glyph="✦" className="-top-2 right-4 text-3xl text-pink" />
+          <PopSticker glyph="★" className="bottom-6 left-1/2 text-2xl text-mint" />
+          <PopSticker glyph="✿" className="left-[46%] top-10 hidden text-2xl text-lilac-deep md:block" />
 
           <div>
             <span className="sticker inline-flex items-center gap-2 rounded-full bg-mint px-3 py-1 font-mono text-xs dark:bg-night-card">
@@ -154,10 +199,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="md:rotate-1">
+          <div className="relative md:rotate-1">
             <Terminal />
+            <div
+              className="mascot sticker absolute -bottom-6 -left-6 grid h-16 w-16 -rotate-12 place-items-center rounded-full bg-pink font-mono text-xl font-bold text-ink transition-transform hover:rotate-0 hover:scale-110 dark:bg-pink"
+              title="hi :)"
+            >
+              <span className="smile">:)</span>
+              <span className="wink">;)</span>
+            </div>
           </div>
         </section>
+
+        <Marquee />
 
         {/* work */}
         <section id="work" className="scroll-mt-20 py-16">
@@ -210,6 +264,8 @@ export default function Home() {
           </div>
         </section>
 
+        <Squiggle />
+
         {/* projects */}
         <section id="projects" className="scroll-mt-20 py-16">
           <SectionTitle kicker="// projects" title="Things I've made" />
@@ -254,10 +310,13 @@ export default function Home() {
           </div>
         </section>
 
+        <Squiggle />
+
         {/* about */}
         <section id="about" className="scroll-mt-20 py-16">
           <SectionTitle kicker="// about" title="A little about me" />
           <div className="grid gap-6 md:grid-cols-[1.3fr_1fr]">
+            <div className="space-y-6">
             <div className="sticker rounded-2xl bg-paper p-6 text-[15px] leading-relaxed dark:bg-night-card">
               <p>
                 I studied Software Engineering at UT Dallas and spent most of the last year at felixx, an early-stage
@@ -269,6 +328,24 @@ export default function Home() {
                 fast, and checking the numbers to see if it worked. Lately I&apos;ve also been doing felixx&apos;s
                 brand and design, which is how this site ended up with stickers.
               </p>
+            </div>
+
+            <div className="sticker relative rounded-2xl bg-mint/60 p-5 dark:bg-night-card">
+              <span className="sticker absolute -top-3 left-5 -rotate-3 rounded-full bg-paper px-2.5 py-0.5 font-mono text-[11px] font-semibold text-ink">
+                📌 now
+              </span>
+              <ul className="mt-2 space-y-2 text-sm">
+                {now.map(([icon, label, text]) => (
+                  <li key={label} className="flex gap-3">
+                    <span>{icon}</span>
+                    <span>
+                      <span className="font-mono text-xs uppercase tracking-wide text-muted dark:text-[#9f97c2]">{label}</span>{" "}
+                      {text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             </div>
             <ul className="space-y-3">
               {[
@@ -287,10 +364,12 @@ export default function Home() {
           </div>
         </section>
 
+        <Squiggle />
+
         {/* contact */}
         <section id="contact" className="scroll-mt-20 py-16">
           <div className="sticker relative overflow-hidden rounded-3xl bg-lilac p-8 text-ink sm:p-12 dark:bg-lilac-deep dark:text-white">
-            <span className="float pointer-events-none absolute right-8 top-6 text-4xl [--r:-8deg]" aria-hidden>✿</span>
+            <PopSticker glyph="✿" className="right-8 top-6 text-4xl" />
             <p className="font-mono text-sm opacity-70">{"// contact"}</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">let&apos;s build something cool</h2>
             <p className="mt-3 max-w-lg opacity-80">
@@ -298,9 +377,10 @@ export default function Home() {
               inbox is open.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href={`mailto:${EMAIL}`} className="sticker sticker-hover rounded-xl bg-paper px-5 py-2.5 font-mono text-sm font-semibold text-ink">
-                {EMAIL}
-              </a>
+              <CopyEmail
+                email={EMAIL}
+                className="sticker sticker-hover rounded-xl bg-paper px-5 py-2.5 font-mono text-sm font-semibold text-ink"
+              />
               <a href={LINKEDIN} className="sticker sticker-hover rounded-xl bg-butter px-5 py-2.5 font-semibold text-ink">
                 LinkedIn ↗
               </a>
@@ -313,7 +393,10 @@ export default function Home() {
       </main>
 
       <footer className="mx-auto max-w-5xl px-4 pb-10 pt-4 font-mono text-xs text-muted sm:px-6 dark:text-[#9f97c2]">
-        built with next.js + tailwind ✦ © 2026 amal saeed
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <span>built with next.js + tailwind ✦ © 2026 amal saeed</span>
+          <span className="opacity-60" title="try it on a keyboard">psst… ↑↑↓↓←→←→BA</span>
+        </div>
       </footer>
     </div>
   );
