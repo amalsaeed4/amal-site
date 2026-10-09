@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const LINES: { cmd: string; out: string }[] = [
   { cmd: "whoami", out: "amal saeed, software engineer" },
-  { cmd: "cat now.txt", out: "building @ felixx (edtech, dallas)" },
+  { cmd: "cat now.txt", out: "building @ felixx (edtech)" },
   { cmd: "ls interests/", out: "product  ai  growth  design" },
-  { cmd: "echo $STATUS", out: "open to new grad SWE roles ✿" },
+  { cmd: "echo $STATUS", out: "open to SWE roles ✿" },
 ];
 
 // Character offset where each command starts in the overall typing sequence.

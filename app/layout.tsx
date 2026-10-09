@@ -15,7 +15,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Amal Saeed · Software Engineer",
   description:
-    "Software engineer in Dallas building products people actually use. Currently at felixx.",
+    "Software engineer building products people actually use. Currently at felixx.",
 };
 
 // Sets the theme class before paint so there's no light/dark flash.

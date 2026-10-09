@@ -124,13 +124,13 @@ export default function Home() {
 
           <div>
             <span className="sticker inline-flex items-center gap-2 rounded-full bg-mint px-3 py-1 font-mono text-xs dark:bg-night-card">
-              <span className="h-2 w-2 rounded-full bg-[#1fa971]" /> open to new grad SWE roles
+              <span className="h-2 w-2 rounded-full bg-[#1fa971]" /> open to SWE roles
             </span>
             <h1 className="mt-6 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
               hey, i&apos;m Amal <span className="wave">👋</span>
             </h1>
             <p className="mt-5 max-w-md text-lg text-muted dark:text-[#b7b0d4]">
-              Software engineer in Dallas who likes building products people actually use, end to end, from
+              Software engineer who likes building products people actually use, end to end, from
               the database to the{" "}
               <span className="rounded bg-butter px-1 text-ink">pixels</span>.
             </p>
@@ -167,7 +167,7 @@ export default function Home() {
             <div>
               <p className="text-lg font-bold">Software Engineer, Product · felixx</p>
               <p className="text-sm text-muted dark:text-[#b7b0d4]">
-                AI study platform used by students across Texas · Dallas, TX
+                AI study platform for college students
               </p>
             </div>
             <p className="font-mono text-sm text-muted dark:text-[#b7b0d4]">Jun 2025 → now</p>
@@ -276,7 +276,7 @@ export default function Home() {
                 ["🏆", "WEHack 2023 winner (Major League Hacking sponsor challenge)"],
                 ["🏛️", "Student Government senator for the engineering school"],
                 ["🤝", "Student mentor, Society of Women Engineers"],
-                ["📍", "Dallas, TX"],
+                ["🌎", "Open to remote, hybrid, or relocating"],
               ].map(([icon, text]) => (
                 <li key={text} className="sticker flex items-center gap-3 rounded-xl bg-paper px-4 py-3 text-sm dark:bg-night-card">
                   <span className="text-lg">{icon}</span>
@@ -294,7 +294,7 @@ export default function Home() {
             <p className="font-mono text-sm opacity-70">{"// contact"}</p>
             <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">let&apos;s build something cool</h2>
             <p className="mt-3 max-w-lg opacity-80">
-              I&apos;m looking for new grad software engineering roles, especially on product-focused teams. My
+              I&apos;m looking for software engineering roles, especially on product-focused teams. My
               inbox is open.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
@@ -313,7 +313,7 @@ export default function Home() {
       </main>
 
       <footer className="mx-auto max-w-5xl px-4 pb-10 pt-4 font-mono text-xs text-muted sm:px-6 dark:text-[#9f97c2]">
-        built with next.js + tailwind in dallas ✦ © 2026 amal saeed
+        built with next.js + tailwind ✦ © 2026 amal saeed
       </footer>
     </div>
   );
