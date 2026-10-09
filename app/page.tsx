@@ -243,7 +243,7 @@ export default function Home() {
                 </div>
               );
             })}
-            <div className="grid place-items-center rounded-2xl border-2 border-dashed border-ink/30 p-8 text-center dark:border-night-line sm:col-span-2">
+            <div className="grid place-items-center rounded-2xl border-2 border-dashed border-ink/30 p-8 text-center dark:border-night-line">
               <div>
                 <p className="font-mono text-sm text-muted dark:text-[#b7b0d4]">
                   next_project.exe <span className="caret">▍</span>
