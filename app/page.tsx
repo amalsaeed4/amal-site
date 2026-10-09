@@ -2,7 +2,7 @@ import { Terminal } from "@/components/Terminal";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const EMAIL = "amalsaeedwork@gmail.com";
-const LINKEDIN = "https://www.linkedin.com/in/amal-saeed-9876b92b0";
+const LINKEDIN = "https://www.linkedin.com/in/amal-saeed-swe";
 const GITHUB = "https://github.com/amalsaeed4";
 
 const caseStudies = [
