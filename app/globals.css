@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-grotesk);
+  --font-mono: var(--font-jetbrains);
+
+  --color-cream: #fbf7f1;
+  --color-paper: #ffffff;
+  --color-ink: #1f1b2e;
+  --color-muted: #6b6580;
+  --color-lilac: #b9a5ff;
+  --color-lilac-deep: #7c5cff;
+  --color-pink: #ff9ccf;
+  --color-mint: #8fe3c4;
+  --color-butter: #ffe08a;
+  --color-sky: #9fd3ff;
+
+  --color-night: #13111c;
+  --color-night-card: #1d1a2a;
+  --color-night-line: #2e2a42;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+.dark body {
+  background: var(--color-night);
+  color: #ece8ff;
+}
+
+/* soft dotted grid behind everything */
+.dots {
+  background-image: radial-gradient(rgba(31, 27, 46, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.dark .dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+/* chunky "sticker" shadow */
+.sticker {
+  box-shadow: 4px 4px 0 0 var(--color-ink);
+  border: 2px solid var(--color-ink);
+}
+.dark .sticker {
+  box-shadow: 4px 4px 0 0 var(--color-lilac-deep);
+  border-color: var(--color-night-line);
+}
+
+.sticker-hover {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.sticker-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+}
+.dark .sticker-hover:hover {
+  box-shadow: 6px 6px 0 0 var(--color-lilac-deep);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--r, 0deg)); }
+}
+.float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.caret {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10%, 30% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+}
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float, .wave, .caret { animation: none; }
+  html { scroll-behavior: auto; }
 }
