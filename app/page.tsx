@@ -78,15 +78,6 @@ const projects = [
     color: "bg-pink",
     href: "https://devpost.com/software/carmatch-w0zn4h",
   },
-  {
-    emoji: "💜",
-    title: "Kappa Delta Nu Portal",
-    blurb:
-      "Web portal for 100+ members across two chapters: auth, events, and merch ordering that replaced a pile of Google Forms.",
-    tags: ["REST APIs", "auth", "real users"],
-    color: "bg-lilac",
-    href: "https://kappadeltanu.com",
-  },
 ];
 
 function SectionTitle({ kicker, title }: { kicker: string; title: string }) {
