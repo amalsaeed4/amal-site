@@ -18,8 +18,9 @@ export const metadata: Metadata = {
     "Software engineer building products people actually use. Currently at felixx.",
 };
 
-// Sets the theme class before paint so there's no light/dark flash.
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}})()`;
+// Dark by default; only switches to light if the visitor picked it with the toggle.
+// Runs before paint so there's no light/dark flash.
+const themeScript = `(function(){try{if(localStorage.getItem('theme')!=='light')document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}})()`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

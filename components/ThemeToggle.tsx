@@ -13,7 +13,7 @@ function subscribe(onChange: () => void) {
 const isDark = () => document.documentElement.classList.contains("dark");
 
 export function ThemeToggle() {
-  const dark = useSyncExternalStore(subscribe, isDark, () => false);
+  const dark = useSyncExternalStore(subscribe, isDark, () => true);
 
   function toggle() {
     const next = !dark;
