@@ -36,10 +36,10 @@ const caseStudies = [
     color: "bg-butter",
     title: "Growth partner dashboard",
     problem:
-      "Campus growth partners were bringing in students, but there was no clear way for them to see their impact or for us to pay them fairly.",
+      "felixx grows through campus partners, so they need to see their impact, and get paid accurately, every month.",
     built:
       "A dashboard with sign-up attribution, reach counted as unique people, a leaderboard ranked on paying users, and This month / All time views, plus monthly commission calculation that handles contested referrals without losing data.",
-    result: [{ stat: "$", label: "commissions calculated automatically every month" }],
+    result: [{ stat: "📈", label: "partners track their own reach, rank, and monthly earnings" }],
   },
   {
     tag: "integrations",
