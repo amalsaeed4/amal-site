@@ -351,7 +351,7 @@ export default function Home() {
               {[
                 ["🎓", "B.S. Software Engineering, UT Dallas '26"],
                 ["🏆", "WEHack 2023 winner (Major League Hacking sponsor challenge)"],
-                ["🏛️", "UT Dallas Student Government senator representing the Erik Jonsson School of Engineering and Computer Science"],
+                ["🏛️", "Student Government senator, Jonsson School of Engineering"],
                 ["🤝", "Student mentor, Society of Women Engineers"],
                 ["🌎", "Open to remote, hybrid, or relocating"],
               ].map(([icon, text]) => (
