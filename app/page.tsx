@@ -20,14 +20,14 @@ const caseStudies = [
     ],
   },
   {
-    tag: "payments",
+    tag: "ai",
     color: "bg-pink",
-    title: "Stripe billing that doesn't break",
+    title: "AI study suggestions",
     problem:
-      "Out-of-order webhooks, duplicate checkouts, and declined first charges were putting subscriptions in impossible states, and sometimes locking users out.",
+      "Students would open felixx and stare at an empty chat box, not sure what to ask about their own class.",
     built:
-      "Serialized subscription creation, routed each checkout conflict on purpose, closed the out-of-order webhook gap, and let a declined first charge retry instead of locking the account.",
-    result: [{ stat: "✓", label: "declined first charges retry instead of locking accounts" }],
+      "Personalized suggested questions on the home screen and follow-up suggestions after every answer, generated from each student's real course content on our Gemini-powered RAG service, with timeouts and graceful fallbacks so it never breaks the chat.",
+    result: [{ stat: "✦", label: "flashcard + quiz prompts built right into the suggestions" }],
   },
   {
     tag: "integrations",
@@ -45,10 +45,10 @@ const caseStudies = [
 ];
 
 const alsoBuilt = [
-  "lifecycle emails (1,700+ sent)",
   "referral + growth-partner dashboard",
-  "AI study suggestions",
+  "lifecycle emails (1,700+ sent)",
   "document viewer",
+  "subscriptions + billing",
   "marketing site",
 ];
 
@@ -271,7 +271,7 @@ export default function Home() {
               <p>
                 I studied Software Engineering at UT Dallas and spent most of the last year at felixx, an early-stage
                 edtech startup, where I&apos;ve gotten to own whole features: from the database schema and the
-                payment edge cases to the onboarding screens students actually see.
+                AI behind them to the onboarding screens students actually see.
               </p>
               <p className="mt-4">
                 I like the product side of engineering most: figuring out what people actually need, shipping it

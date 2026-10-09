@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const LINES: { cmd: string; out: string }[] = [
   { cmd: "whoami", out: "amal saeed, software engineer" },
   { cmd: "cat now.txt", out: "building @ felixx (edtech, dallas)" },
-  { cmd: "ls interests/", out: "product  payments  ai  design" },
+  { cmd: "ls interests/", out: "product  ai  growth  design" },
   { cmd: "echo $STATUS", out: "open to new grad SWE roles ✿" },
 ];
 
