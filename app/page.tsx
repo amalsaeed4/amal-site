@@ -32,6 +32,16 @@ const caseStudies = [
     result: [{ stat: "✦", label: "flashcard + quiz prompts built right into the suggestions" }],
   },
   {
+    tag: "product",
+    color: "bg-butter",
+    title: "Growth partner dashboard",
+    problem:
+      "Campus growth partners were bringing in students, but there was no clear way for them to see their impact or for us to pay them fairly.",
+    built:
+      "A dashboard with sign-up attribution, reach counted as unique people, a leaderboard ranked on paying users, and This month / All time views, plus monthly commission calculation that handles contested referrals without losing data.",
+    result: [{ stat: "$", label: "commissions calculated automatically every month" }],
+  },
+  {
     tag: "integrations",
     color: "bg-mint",
     title: "Canvas course sync",
@@ -47,7 +57,7 @@ const caseStudies = [
 ];
 
 const alsoBuilt = [
-  "referral + growth-partner dashboard",
+  "refer-a-friend + trial extensions",
   "lifecycle emails (1,700+ sent)",
   "document viewer",
   "subscriptions + billing",
@@ -227,7 +237,7 @@ export default function Home() {
             <p className="font-mono text-sm text-muted dark:text-[#b7b0d4]">Jun 2025 → now</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2">
             {caseStudies.map((c) => (
               <article key={c.title} className="sticker sticker-hover flex flex-col rounded-2xl bg-paper p-5 dark:bg-night-card">
                 <span className={`self-start rounded-full ${c.color} px-2.5 py-0.5 font-mono text-[11px] font-semibold text-ink`}>
