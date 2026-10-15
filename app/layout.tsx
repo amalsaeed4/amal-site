@@ -13,9 +13,18 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://amalsaeed.me"),
   title: "Amal Saeed · Software Engineer",
   description:
     "Software engineer building products people actually use. Currently at felixx.",
+  openGraph: {
+    title: "Amal Saeed · Software Engineer",
+    description: "Software engineer building products people actually use. Currently at felixx.",
+    url: "/",
+    siteName: "Amal Saeed",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 // Dark by default; only switches to light if the visitor picked it with the toggle.
